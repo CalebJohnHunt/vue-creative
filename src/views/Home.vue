@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Swatches />
+    <Swatches :swatches='this.$root.$data.swatches' />
   </div>
 </template>
 
@@ -12,6 +12,6 @@ export default {
   name: 'Home',
   components: {
     Swatches
-  }
+  },
 }
 </script>

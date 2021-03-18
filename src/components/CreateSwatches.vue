@@ -74,9 +74,9 @@ export default {
                 return;
             
             this.$root.$data.palette.push({
+                // The prefab swatches have .added, but that's just a remnant of how we add keep track of which ones we've added
                 id: this.$root.$data.userGeneratedID++, // increase id at the same time so we don't get duplicate ids
                 name: this.name,
-                added: true,
                 colors: this.colors.map(el => el.color),
             });
         },
