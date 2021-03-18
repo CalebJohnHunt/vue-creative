@@ -7,7 +7,7 @@
             </div>
             <div class='added-button'>
                 <div :class='{ added : swatch.added }'>{{ swatch.added ? 'Yes' : 'No'}} </div>
-                <button v-on:click='addSwatch(swatch)'>Add</button>
+                <button @click='addSwatch(swatch)'>Add</button>
             </div>
         </div>
     </div>
@@ -25,8 +25,8 @@ export default {
           if (swatch.added) {
               this.$root.$data.palette.push(swatch);
           } else {
-              console.log(this.$root.$data.palette.indexOf(swatch));
-              this.$root.$data.palette.splice(this.$root.$data.palette.indexOf(swatch), 1);
+              const index = this.$root.$data.palette.findIndex((el) => el.id == swatch.id);
+              this.$root.$data.palette.splice(index, 1);
           }
       }
   }
