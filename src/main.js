@@ -8,6 +8,7 @@ Vue.config.productionTip = false
 let data = {
   swatches: mock,
   palette: [],
+  userGeneratedID: 1001, // custom id so that user-made swatches don't get mixed up with the mock-data ones
 }
 
 new Vue({
