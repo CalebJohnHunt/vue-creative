@@ -1,7 +1,7 @@
 <template>
     <footer>
         <p>Made by Caleb Hunt</p>
-        <a href="https://github.com/BYU-CS-260-Winter-2021/lab-3b-grocery-store-Kaychub"><img src="/images/GitHub-Mark-32px.png" title="Github Repo for this project" ></a>
+        <a href="https://github.com/Kaychub/vue-creative"><img src="/images/GitHub-Mark-32px.png" title="Github Repo for this project" ></a>
   </footer>
 </template>
 
