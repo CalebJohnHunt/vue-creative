@@ -1,5 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <p>Before swatches</p>
+    <Swatches/>
   </div>
 </template>
+
+
+<script>
+import Swatches from '@/components/Swatches.vue'
+
+export default {
+  name: 'About',
+  components: {
+    Swatches,
+  }
+}
+
+</script>
