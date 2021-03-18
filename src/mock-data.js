@@ -1,6 +1,7 @@
 let mock = [{
     id: 1,
     name: 'blues',
+    added: false,
     colors: [
         '#0000ff',
         '#0000aa',
@@ -12,6 +13,7 @@ let mock = [{
 }, {
     id: 2,
     name: 'greens',
+    added: false,
     colors: [
         '#00ff00',
         '#00aa00',
@@ -23,6 +25,7 @@ let mock = [{
 }, {
     id: 3,
     name: 'reds',
+    added: false,
     colors: [
         '#ff0000',
         '#aa0000',

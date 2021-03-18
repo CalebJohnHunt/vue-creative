@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 
 let data = {
   swatches: mock,
-  userSwatches: [],
+  palette: [],
 }
 
 new Vue({
