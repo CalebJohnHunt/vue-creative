@@ -1,18 +1,23 @@
 <template>
     <div class='palette'>
-        <button class='toggle-codes' @click='toggleCodes()'>Turn {{ this.showCodes ? "off" : "on" }} codes</button>
-        <div class='swatch' v-for='swatch in this.$root.$data.palette' :key='swatch.id'>
-            <div class='name'>
-                <h1>{{ swatch.name }}</h1>
-            </div>
-            <div class='color-wrapper'>
-                <div class='color-code-wrapper' v-for='color in swatch.colors' :key='color' :style='{"background-color": color, width: 100/swatch.colors.length + "%"}'>
-                    <!-- <div class='color' :style='{"background-color": color}'></div> -->
-                    <div class='color-code'>{{ showCodes ? color : ""}}</div>
-                    <!-- <div class='color-code'></div> -->
+        <div v-if='this.$root.$data.palette.length > 0'>
+            <button class='toggle-codes' @click='toggleCodes()'>Turn {{ this.showCodes ? "off" : "on" }} codes</button>
+            <div class='swatch' v-for='swatch in this.$root.$data.palette' :key='swatch.id'>
+                <div class='name'>
+                    <h1>{{ swatch.name }}</h1>
                 </div>
+                <div class='color-wrapper'>
+                    <div class='color-code-wrapper' v-for='color in swatch.colors' :key='color' :style='{"background-color": color, width: 100/swatch.colors.length + "%"}'>
+                        <!-- <div class='color' :style='{"background-color": color}'></div> -->
+                        <div class='color-code'>{{ showCodes ? color : ""}}</div>
+                        <!-- <div class='color-code'></div> -->
+                    </div>
+                </div>
+                <button class='removeButton' @click='removeSwatch(swatch)'>X</button>
             </div>
-            <button class='removeButton' @click='removeSwatch(swatch)'>X</button>
+        </div>
+        <div v-else>
+            <h2>Your swatches will show up here!</h2>
         </div>
     </div>
 </template>
