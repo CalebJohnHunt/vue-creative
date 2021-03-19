@@ -37,10 +37,19 @@ export default {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  /* color: #2c3e50; */
+  color: #1099b9;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1099b9;
+  color: white;
+}
+
+button {
+  color: white;
+  background-color: #1099b9;
 }
 </style>

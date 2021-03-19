@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Swatches :swatches='this.$root.$data.swatches' />
+      <Swatches :swatches='this.$root.$data.swatches' />
   </div>
 </template>
 
@@ -15,3 +15,6 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+</style>

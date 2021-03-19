@@ -1,14 +1,14 @@
 <template>
-    <div class='content'>
-        <input type='text' placeholder='Swatch name' :class='badName ? "badName" : "normalName"' id='inputName' v-model='name' />
+    <div :class='badName ? "badName content" : "content"'>
+        <input type='text' placeholder='Swatch name here' :class='badName ? "badName" : "normalName"' id='inputName' v-model='name' />
         <div class='color-row' v-for='color in this.colors' :key='color.id'>
-            <input class='color-name' type='text' v-model='color.color' :class='color.badName ? "badName" : "normalName"' />
+            <input class='color-name' type='text' v-model='color.color' :class='color.badName ? "badName" : "normalName"' placeholder='#1099b9' />
             <div class='color' :style='{"background-color": color.color}'></div>
-            <button @click='removeColor(color)'>X</button>
+            <button class='removeButton' @click='removeColor(color)'>X</button>
         </div>
         <div class='button-container'>
-            <button @click='addColor'>Add Color</button>
-            <button @click='addSwatch'>Add Swatch to Palette</button>
+            <button id='addButton' @click='addColor'>Add Color</button>
+            <button @click='addSwatch'>Add to Palette</button>
         </div>
     </div>
 </template>
@@ -83,6 +83,7 @@ export default {
     flex-direction: column;
     align-items: center;
     width: 70%;
+    max-width: 800px;
 
     margin: auto;
 
@@ -93,17 +94,18 @@ export default {
 }
 
 #inputName {
+    border: none;
     margin-bottom: 2px;
-    /* height: 30px; */
+    text-align: center;
+    font-weight: bold;
     font-size: 20px;
-    max-width: 85%;
-    border-top: none;
-    border-left: none;
-    border-width: 2px;
-    border-style: inset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    width: 95%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+#inputName:focus {
+    outline: none;
 }
 
 .color-row {
@@ -116,7 +118,10 @@ export default {
 
 .color-name {
     /* border: none; */
+    word-wrap: break-word;
     font-size: 18px;
+    color: black;
+    letter-spacing: 1px;
 }
 
 .color {
@@ -124,20 +129,35 @@ export default {
     width: 100%;
 }
 
+.removeButton {
+    max-width: 100%;
+}
 
 .button-container {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 0;
+    background-color: black;
 }
 
+.button-container button {
+    width: 50%;
+    font-size: 18px;
+    /* margin: 0; */
+    /* border: 0; */
+    /* padding: 0; */
+}
 
 .badName {
     background-color: lightcoral;
 }
 
-.normalName {
-
+button {
+    background-color: #1099b9;
+    color: white;
+    border: 1px solid black;
 }
+
 </style>
