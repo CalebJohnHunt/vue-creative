@@ -87,7 +87,7 @@ export default {
 
 .added-button button {
     width: 100%;
-    background-color: #1099b9;
+    background-color: #333;
     border: 1px solid black;
     /* border-top: 2px solid black; */
     font-size: 16px;

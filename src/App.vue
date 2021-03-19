@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src='/vue-creative-logo.svg' />
+    <img src='/palette-grey.png' />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/create">Create</router-link> |
@@ -43,18 +43,18 @@ img {
 #nav a {
   font-weight: bold;
   /* color: #2c3e50; */
-  color: #1099b9;
+  color: #333;
 }
 
 #nav a.router-link-exact-active {
   padding: 10px;
   border-radius: 10px;
-  background-color: #1099b9;
+  background-color: #333;
   color: white;
 }
 
 button {
   color: white;
-  background-color: #1099b9;
+  background-color: #333;
 }
 </style>

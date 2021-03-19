@@ -2,7 +2,7 @@
     <div :class='badName ? "badName content" : "content"'>
         <input type='text' placeholder='Swatch name here' :class='badName ? "badName" : "normalName"' id='inputName' v-model='name' />
         <div class='color-row' v-for='color in this.colors' :key='color.id'>
-            <input class='color-name' type='text' v-model='color.color' :class='color.badName ? "badName" : "normalName"' placeholder='#1099b9' />
+            <textarea class='color-name' maxlength='7' wrap='soft' v-model='color.color' :class='color.badName ? "badName" : "normalName"' placeholder='#1099b9' />
             <div class='color' :style='{"background-color": color.color}'></div>
             <button class='removeButton' @click='removeColor(color)'>X</button>
         </div>
@@ -118,7 +118,9 @@ export default {
 
 .color-name {
     /* border: none; */
+    resize: none;
     word-wrap: break-word;
+    word-break: break-all;
     font-size: 18px;
     color: black;
     letter-spacing: 1px;
@@ -155,7 +157,7 @@ export default {
 }
 
 button {
-    background-color: #1099b9;
+    background-color: #333;
     color: white;
     border: 1px solid black;
 }
