@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/create">Create</router-link> |
