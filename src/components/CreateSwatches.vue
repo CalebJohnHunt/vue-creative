@@ -2,10 +2,14 @@
     <div class='content'>
         <input type='text' placeholder='Swatch name' :class='badName ? "badName" : "normalName"' id='inputName' v-model='name' />
         <div class='swatch' v-for='color in this.colors' :key='color.id'>
-            <div class='color' :style='styleBackgroundColor(color.color)'>Hello</div>
+            <div class='color' :style='{"background-color": color.color}'></div>
             <input type='text' v-model='color.color' :class='color.badName ? "badName" : "normalName"' />
+            <button @click='removeColor(color)'>X</button>
         </div>
-        <button @click='addSwatch'>Add</button>
+        <div class='button-container'>
+            <button @click='addColor'>Add Color</button>
+            <button @click='addSwatch'>Add Swatch to Palette</button>
+        </div>
     </div>
 </template>
 
@@ -22,38 +26,10 @@ export default {
                             badName: false,
                             color: '#aa00ff',
                         },
-                        {
-                            id: 2,
-                            badName: false,
-                            color: '#aa00ff',
-                        },
-                        {
-                            id: 3,
-                            badName: false,
-                            color: '#aa00ff',
-                        },
-                        {
-                            id: 4,
-                            badName: false,
-                            color: '#aa00ff',
-                        },
-                        {
-                            id: 5,
-                            badName: false,
-                            color: '#aa00ff',
-                        },
-                        {
-                            id: 6,
-                            badName: false,
-                            color: '#aa00ff',
-                        }
                     ],
         }
     },
     methods: {
-        styleBackgroundColor(c) {
-            return 'background-color: ' + c;
-        },
         addSwatch() {
             // We only update badName here because we don't want the field to be red until they attempt to submit
             this.badName = !this.name; // badName = we don't have a name
@@ -80,6 +56,21 @@ export default {
                 colors: this.colors.map(el => el.color),
             });
         },
+        addColor() {
+            if (this.colors.length > 7)
+                return;
+            this.colors.push({
+                id: this.colors[this.colors.length-1].id+1,
+                badName: false,
+                color: '#aa00ff',
+            });
+        },
+        removeColor(color) {
+            if (this.colors.length == 1)
+                return;
+            let index = this.colors.findIndex(el => el.id == color.id);
+            this.colors.splice(index, 1);
+        }
     },
     computed: {
     }
@@ -87,6 +78,11 @@ export default {
 </script>
 
 <style scoped>
+.color {
+    height: 20px;
+    /* width: 50px; */
+}
+
 #inputName {
 
 }
