@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <img src='/vue-creative-logo.svg' />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/create">Create</router-link> |
@@ -31,8 +31,13 @@ export default {
   /* color: #2c3e50; */
 }
 
+img {
+  max-width: 30px;
+}
+
 #nav {
   padding: 30px;
+  padding-top: 10px;
 }
 
 #nav a {
