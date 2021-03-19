@@ -82,11 +82,12 @@ export default {
     align-items: center;
     justify-content: center;
     /* color: #ddd; */
-    height: 20px;
+    height: 30px;
 }
 
 .added-button button {
     width: 100%;
+    height: 100%;
     background-color: #333;
     border: 1px solid black;
     /* border-top: 2px solid black; */
