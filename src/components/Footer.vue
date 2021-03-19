@@ -1,8 +1,11 @@
 <template>
-    <footer>
-        <p>Made by Caleb Hunt</p>
-        <a href="https://github.com/Kaychub/vue-creative"><img src="/images/GitHub-Mark-32px.png" title="Github Repo for this project" ></a>
-  </footer>
+    <div id='container'>
+        <div id='spacer'></div>
+        <footer>
+            <p>Made by Caleb Hunt</p>
+            <a href="https://github.com/Kaychub/vue-creative"><img src="/images/GitHub-Mark-32px.png" title="Github Repo for this project" ></a>
+        </footer>
+    </div>
 </template>
 
 <script>
@@ -12,7 +15,11 @@ export default {
 </script>
 
 <style scoped>
-    footer {
+#spacer {
+    height: 50px;
+}
+
+footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
