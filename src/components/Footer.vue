@@ -34,6 +34,7 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+    right: 100%;
     width: 100%;
 }
 </style>
