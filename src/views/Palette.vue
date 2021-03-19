@@ -28,13 +28,15 @@ export default {
 <style scoped>
 .swatch {
     display: grid;
-    margin: 2px 0;
+    margin: 10px 0;
+    /* border: 1px solid black; */
     grid-template-columns: 10% 80% 10%;
     grid-template-areas: "name colors button";
 }
 
 .name {
     grid-area: "name";
+    word-wrap: break-word;
     /* width: 400px; */
 }
 
@@ -50,8 +52,6 @@ h1 {
 }
 
 .color {
-    /* width: 20px; */
-    margin: 0 2px;
 }
 
 .removeButton {

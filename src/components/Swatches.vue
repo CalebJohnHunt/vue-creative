@@ -2,12 +2,12 @@
     <div class='content'>
         <div class='swatch-wrapper' v-for='swatch in this.$root.$data.swatches' :key='swatch.id'>
             <div class='name'> {{ swatch.name }} </div>
-            <div class='swatch' v-for='c in swatch.colors' :key='c' :style='styleBackgroundColor(c)'>
-                    {{ c }}
+            <div class='swatch' v-for='c in swatch.colors' :key='c' :style='{"background-color": c}'>
+                <div class='swatch-color'>{{ c }}</div>
             </div>
             <div class='added-button'>
-                <div :class='{ added : swatch.added }'>{{ swatch.added ? 'Yes' : 'No'}} </div>
-                <button @click='addSwatch(swatch)'>Add</button>
+                <button v-if='!swatch.added' @click='addSwatch(swatch)'>{{ swatch.added ? "Remove" : "Add" }}</button>
+                <div v-else>Added!</div>
             </div>
         </div>
     </div>
@@ -54,13 +54,30 @@ export default {
     border-top-right-radius: 10px;
 }
 
+.name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .swatch {
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .added-button {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+}
+
+.added-button button {
+    width: 100%;
+    /* background-color: #; */
+    border: 1px solid black;
+    border-top: 2px solid black;
 }
 </style>
